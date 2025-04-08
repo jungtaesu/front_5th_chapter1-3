@@ -1,4 +1,7 @@
-export function shallowEquals<T extends Record<string, unknown>>(objA: T, objB: T): boolean {
+export function shallowEquals<T extends Record<string, unknown>>(
+  objA: T,
+  objB: T,
+): boolean {
   if (objA === objB) {
     console.log("shallowEquals: same reference");
     return true;
@@ -27,7 +30,7 @@ export function shallowEquals<T extends Record<string, unknown>>(objA: T, objB: 
     if (keysA.length !== keysB.length) return false;
     console.log("objA:", objA, objB);
     for (const key of keysA) {
-      if ((objA)[key] !== (objB)[key]) return false;
+      if (objA[key] !== objB[key]) return false;
     }
     return true;
   }
